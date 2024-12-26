@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <title> Profile</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: whitesmoke;
+      margin: 5;
+    }
+
+    .portfolio {
+      margin-top: 0px;
+      text-align: center;
+      animation: fadeIn 2s ease-in forwards;
+    }
+
+    .upload {
+      margin-top: 40px;
+    }
+
+    input[type=submit] {
+      background-color: #15b437;
+      color: white;
+      padding: 10px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 15px;
+    }
+
+    input[type=file]::file-selector-button {
+      margin-right: 20px;
+      border: none;
+      background: #084cdf;
+      padding: 10px 20px;
+      border-radius: 10px;
+      color: #fff;
+      cursor: pointer;
+      transition: background .2s ease-in-out;
+    }
+
+    input[type=file]::file-selector-button:hover {
+      background: #0d45a5;
+    }
+
+    .profile-pic {
+      border-radius: 50%;
+      border: 5px solid #3498;
+      width: 150px;
+      height: 150px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      color: #333;
+    }
+
+    .logout {
+      background-color: #f44336;
+      color: white;
+      padding: 14px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 15px;
+    }
+
+    p {
+      color: #3498;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .container {
+      padding-top: 1vh;
+      width: 1400px;
+      margin: auto;
+      columns: 6;
+      column-gap: 20px;
+
+    }
+
+    .container .box {
+      width: 100%;
+      margin-bottom: 10px;
+      break-inside: avoid;
+      border-radius: 15px;
+    }
+
+    .container .box img {
+      max-width: 100%;
+      min-width: 100%;
+      border-radius: 10px;
+    }
+
+
+    img:hover {
+
+      opacity: .95;
+      box-shadow: 0 0 10px #fff;
+    }
+
+    h4 {
+      font-size: 50px;
+    }
+
+    .caption {
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 2px;
+    }
+
+    @media (max-width: 1427px) {
+      .container {
+        columns: 5;
+        width: calc(100% - 40px);
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .container {
+        columns: 4;
+      }
+    }
+
+    @media (max-width: 786px) {
+      .container {
+        columns: 2;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      .container {
+        columns: 3;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        columns: 1;
+      }
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      padding: 10px 5%;
+      font-family: "Outfit", sans-serif;
+      position: sticky;
+      position: -webkit-sticky;
+      top: 0;
+      z-index: 99;
+      background-color: white;
+    }
+
+    #inp {
+      border: none;
+      outline: none;
+      background: none;
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .arrow-icon {
+      width: 32px;
+      height: 32px;
+    }
+
+    .icon {
+      height: 32px;
+      width: 32px;
+    }
+
+    li:hover {
+      background-color: #111111;
+      color: #e9e9e9;
+      padding: 15px 15px;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    .search-icon {
+      height: 24px;
+      width: 24px;
+      margin-right: 10px;
+    }
+
+    .search-bar {
+      display: flex;
+      width: 50%;
+      padding-left: 25px;
+      align-items: center;
+      background-color: #e9e9e9;
+      border-radius: 32px;
+      height: 50px;
+    }
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      padding: 0px 10px;
+      align-items: center;
+    }
+
+    li {
+      padding: 15px 15px;
+      font-size: 17px;
+    }
+
+    .nav-icon {
+      margin: 0px 8px;
+      height: 28px;
+      width: 28px;
+    }
+
+    .nav-icons {
+      margin-left: 10px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <img
+      src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/pinterest-round-color-icon.png"
+      class="icon pinterest-icon">
+    <ul class="navigation">
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/feed">Feed</a>
+      </li>
+    </ul>
+    <div class="search-bar">
+      <img src="https://www.brilliantlightingcenter.com/data/images/icons/search.svg" class="search-icon">
+      <input type="text" id="inp" placeholder="Search">
+    </div>
+    <div class="nav-icons">
+      <img src="https://uxwing.com/wp-content/themes/uxwing/download/communication-chat-call/bell-icon.png"
+        class="icon nav-icon">
+      <img
+        src="https://uxwing.com/wp-content/themes/uxwing/download/communication-chat-call/speech-bubble-black-icon.png"
+        class="icon nav-icon">
+      <img src="https://uxwing.com/wp-content/themes/uxwing/download/arrow-direction/angle-bottom-icon.png"
+        class="icon nav-icon arrow-icon">
+    </div>
+  </div>
+
+  <div class="portfolio">
+    <div class="profile-pic">
+      <img
+        src="https://cdn.vectorstock.com/i/1000x1000/54/41/young-and-elegant-woman-avatar-profile-vector-9685441.webp">
+    </div>
+    <h1>
+      <%=user.fullname%>
+    </h1>
+    <p>@<%=user.username%>
+    </p>
+    <div class="logout">
+      <a href="/logout" style="text-decoration: none;">logout</a>
+    </div>
+    <div class="upload">
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="text" name="caption">
+        <input type="file" name="file">
+        <input type="submit">
+      </form>
+    </div>
+    <h4>Posts</h4>
+  </div>
+  <div class="container">
+    <% user.posts.forEach(function(post){ %>
+      <div class="box">
+        <img src="../images/upload/<%=post.image%>" alt="image">
+        <div class="caption">Lorem ipsum </div>
+      </div>
+      <% }) %>
+  </div>
+
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
