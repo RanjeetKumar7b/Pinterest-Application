@@ -15,7 +15,7 @@ router.get('/', isLoggedin, async function (req, res, next) {
         res.render('profile', { user });
 });
 
-router.get('/feed', isLoggedin, async (req, res) => {
+router.get('/feed', async (req, res) => {
         const post_data = await postModel.find({});
         res.render('feed', { post_data })
 });
