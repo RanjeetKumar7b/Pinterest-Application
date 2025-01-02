@@ -15,7 +15,7 @@ app.use(expressSession({
   resave: false,
   saveUninitialized: true,
   secret: "ranjeet",
-  cookie: { maxAge: 60000 },
+  cookie: { maxAge: 3600000 },
 }));
 app.use(flash());
 app.use(passport.initialize());
